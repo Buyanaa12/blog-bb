@@ -6,7 +6,7 @@ import Alert from "react-bootstrap/Alert";
 export default function Home() {
   return (
     <div className={styles.container}>
-      {[
+      {/* {[
         "primary",
         "secondary",
         "success",
@@ -19,7 +19,8 @@ export default function Home() {
         <Alert key={idx} variant={variant}>
           This is a {variant} alert—check it out!
         </Alert>
-      ))}
+      ))} */}
+      my blog
     </div>
   );
 }
