@@ -3,8 +3,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import MyNavbar from "components/my-navbar";
 import ListItem from "components/list-item";
 import GridItem from "components/grid-item";
+// import { getAllPosts } from "lib/api";
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <Container>
       <MyNavbar />
@@ -13,6 +14,8 @@ export default function Home() {
         <Row>
           <Col md="8"></Col>
         </Row>
+
+        {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
 
         <hr />
 
@@ -59,3 +62,13 @@ export default function Home() {
     </Container>
   );
 }
+
+// export const getStaticProps = async () => {
+//   const posts = await getAllPosts();
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// };
