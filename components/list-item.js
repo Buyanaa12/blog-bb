@@ -13,9 +13,9 @@ export default () => (
         />
         <div>
           <Card.Title className="font-weight-bold mb-1">
-            Амар Өсөхбаяр
+            Damdinsuren Buyanjargal
           </Card.Title>
-          <Card.Text className="card-date">2021 оны 3 сарын 21</Card.Text>
+          <Card.Text className="card-date">2021 оны 10 сарын 17</Card.Text>
         </div>
       </Card.Header>
       <Card.Body>
