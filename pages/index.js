@@ -1,74 +1,37 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
-
-import MyNavbar from "components/my-navbar";
-import ListItem from "components/list-item";
+import { Row, Col } from "react-bootstrap";
 import GridItem from "components/grid-item";
-// import { getAllPosts } from "lib/api";
+import { getAllPosts } from "lib/api";
+import Layout from "components/layout";
+// import Intro from "components/intro";
+import moment from "moment";
 
 export default function Home({ posts }) {
   return (
-    <Container>
-      <MyNavbar />
+    <Layout>
+      <Row>
+        <Col md="12">{/* <Intro /> */}</Col>
+      </Row>
 
-      <div className="blog-detail-page">
-        <Row>
-          <Col md="8"></Col>
-        </Row>
+      <hr />
 
-        {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
-
-        <hr />
-
-        <div className={`page-wrapper`}>
-          <Row className="mb-5">
-            <Col md="10">
-              <ListItem />
-            </Col>
-
-            <Col md="4">
-              <GridItem />
-            </Col>
-
-            <Col md="4">
-              <GridItem />
-            </Col>
-
-            <Col md="4">
-              <GridItem />
-            </Col>
-            <Col md="4">
-              <GridItem />
-            </Col>
-
-            <Col md="4">
-              <GridItem />
-            </Col>
-
-            <Col md="4">
-              <GridItem />
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <footer className="page-footer">
-        <div>
-          <a href="#">нүүр</a>
-          {" | "}
-          <a href="#">сургалт</a>
-          {" | "}
-          <a href="#">фэйсбүүк</a>
-        </div>
-      </footer>
-    </Container>
+      <pre>{/*JSON.stringify(posts, null, 2)*/}</pre>
+      <Row className="mb-5">
+        {posts.map((post) => (
+          <Col md="4">
+            <GridItem post={post} />
+          </Col>
+        ))}
+      </Row>
+    </Layout>
   );
 }
 
-// export const getStaticProps = async () => {
-//   const posts = await getAllPosts();
+export const getStaticProps = async () => {
+  const posts = await getAllPosts();
 
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// };
+  return {
+    props: {
+      posts,
+    },
+  };
+};
